@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+pyrightconfig.json
+
+# Node
+node_modules/
+dist/
+.DS_Store
+
+# Editor
+.vscode/
+
+# User exclusions
+scribe_prompt.py
+scribe_record.py
