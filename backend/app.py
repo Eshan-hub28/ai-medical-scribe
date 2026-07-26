@@ -42,7 +42,7 @@ app.add_middleware(
 
 # --- AWS configuration ---
 AWS_REGION = "ap-south-1"  # Mumbai Region for DPDP Compliance
-S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "sumeedha-medical-notes")
+S3_BUCKET_NAME = os.getenv("S3_BUCKET_NAME", "sumedhaa-medical-notes")
 
 # --- 1. AWS Secrets Manager ---
 def get_secret(secret_name):
@@ -56,7 +56,7 @@ def get_secret(secret_name):
     client = session.client(service_name='secretsmanager', region_name=AWS_REGION)
     
     try:
-        get_secret_value_response = client.get_secret_value(SecretId="sumeedha-api-keys")
+        get_secret_value_response = client.get_secret_value(SecretId="sumedhaa-api-keys")
         secret = json.loads(get_secret_value_response['SecretString'])
         return secret.get(secret_name)
     except ClientError as e:
