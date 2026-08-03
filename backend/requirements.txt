@@ -1,4 +1,7 @@
-sounddevice>=0.4.6
+fastapi
+uvicorn
+openai
+reportlab
 numpy>=1.20.0
 torch>=2.0.0
 noisereduce>=3.0.0
@@ -11,3 +14,4 @@ pyannote.audio
 boto3>=1.28.0
 sqlalchemy>=2.0.0
 psycopg2-binary>=2.9.7
+python-multipart

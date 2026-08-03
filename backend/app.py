@@ -87,7 +87,10 @@ class AuditLog(Base):
     timestamp = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
 # Create tables
-Base.metadata.create_all(bind=engine)
+try:
+    Base.metadata.create_all(bind=engine)
+except Exception as e:
+    print(f"Warning: Could not connect to database on startup (will retry on demand): {e}")
 
 def log_audit_action(action: str, details: str):
     """Log an action to the PostgreSQL database for DPDP compliance."""
